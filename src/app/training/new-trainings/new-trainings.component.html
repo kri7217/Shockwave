@@ -1,0 +1,20 @@
+<section style="display: flex;justify-content: center;">
+  <div class="training-card">
+    <mat-card>
+      <mat-card-title><span>Good !!! Begin Workout</span>
+        <mat-icon>directions_run</mat-icon>....<mat-icon>directions_bike</mat-icon>
+      </mat-card-title>
+      <mat-card-content>
+        <mat-label>
+          <h3>Exercise</h3>
+        </mat-label>
+        <mat-select placeholder="Exercise" (selectionChange)="onTrainingSelected($event.value)" #exerciseSelection>
+          <mat-option *ngFor="let exercise of exercises" [value]="exercise.id">{{exercise.name}}</mat-option>
+        </mat-select>
+        <div>
+          <button mat-raised-button color="primary" [disabled]="exerciseSelection.value==undefined" (click)="startTraining(exerciseSelection.value)">Start</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

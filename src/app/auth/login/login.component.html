@@ -1,0 +1,25 @@
+<section class="main_section">
+    <div class="image_container">
+      <img class="signUp_image" src="../../../assets/fitness-excercise.jpg">
+    </div>
+    <form class="login_form" #f="ngForm" >
+      <mat-label>Login Form</mat-label>
+  
+      <mat-form-field>
+        <mat-label>E-Mail</mat-label>
+        <input name="mail" matInput placeholder="mail address" ngModel required email #mail="ngModel">
+        <mat-error *ngIf="! mail.value">Please enter mail address</mat-error>
+        <mat-error *ngIf="mail.value">Invalid mail</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field  hintLabel="Should be of min 8 characters">
+        <mat-label>Password</mat-label>
+        <input name="password" matInput type="password" placeholder="Password" ngModel required minlength="8"  #password="ngModel">
+        <mat-hint align="end">{{password.value?.length }}/8</mat-hint>
+      </mat-form-field>
+      
+        <button mat-button color="primary" 
+        [disabled]="! f.form.valid"
+        (click)="onSubmit(f)">Login</button>
+    </form>
+  </section>

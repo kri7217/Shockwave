@@ -1,0 +1,37 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+   <mat-nav-list>
+       <a mat-list-item routerLink="/signIn" (click)="sidenav.close()">
+        <mat-icon>person_add</mat-icon>
+        <span class="side-nav-item">Sign In</span></a>
+       <a mat-list-item routerLink="/login" (click)="sidenav.close()">
+        <mat-icon>play_for_work</mat-icon>
+        <span class="side-nav-item">Login</span></a>
+       <a mat-list-item routerLink="/training"  (click)="sidenav.close()">
+        <mat-icon>fitness_center</mat-icon>
+        <span class="side-nav-item">Training</span></a>
+     
+   </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+
+      <div class="menu-responsive">
+        <button mat-flat-button color="primary" (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>LOGO</div>
+
+      <div class="nav-items">
+        <button mat-flat-button color="primary" *ngIf="! isUserLoggedIn" routerLink="/signIn">Sign In</button>
+        <button mat-flat-button color="primary" *ngIf="! isUserLoggedIn" routerLink="/login">Login</button>
+        <button mat-flat-button color="primary" *ngIf="isUserLoggedIn" routerLink="/training">Training</button>
+        <button mat-flat-button color="primary" (click)="onLogout()" *ngIf="isUserLoggedIn" >Logout</button>
+      </div>
+    </mat-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

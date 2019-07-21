@@ -1,0 +1,33 @@
+
+
+mat-sidenav-container , mat-sidenav,mat-sidenav-content{
+    height: 100%;
+}
+
+mat-sidenav{
+    width: 30%;
+}
+
+.menu-responsive{
+    display: none;
+  }
+
+.nav-items{
+    display: flex;
+    justify-content: flex-end;
+    flex: auto;
+}
+
+.side-nav-item{
+    padding-left: 6px;
+}
+
+@media  (max-width: 600px) {
+    .nav-items{
+        display: none;
+    }
+    .menu-responsive{
+      display: inline;
+    }
+    
+} 

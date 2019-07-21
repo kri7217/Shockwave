@@ -1,0 +1,22 @@
+.training-card{
+    display: inline-flex;
+    padding: 16px;
+}
+
+span{
+    padding-right: 6px;
+}
+
+mat-card-title{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+mat-card-content{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
